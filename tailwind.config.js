@@ -33,6 +33,11 @@ module.exports = {
       animation: {
         placeholderShimmer: 'placeholderShimmer 1s linear infinite forwards',
       },
+      screens: {
+        xsm: {
+          raw: '(max-width: 400px)',
+        },
+      },
     },
   },
   plugins: [],

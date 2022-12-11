@@ -15,9 +15,9 @@ export function PlaceTemplate({ place }: PlaceTemplateProps) {
         </LinkWrapper>
         <ButtonDarkMode />
       </div>
-      <div className="p-10 dark:bg-darkColor text-darkColor dark:text-white">
+      <div className="p-10 dark:bg-darkColor text-darkColor dark:text-white h-screen">
         <main className="max-w-80 m-auto">
-          <h1 className="text-5rem mb-4"> {place.name} </h1>
+          <h1 className="text-5rem mb-4 xsm:text-6xl xsm:mt-4">{place.name}</h1>
           <div
             className="text-2xl text-justify mb-8"
             dangerouslySetInnerHTML={{ __html: place.description.html }}
