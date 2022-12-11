@@ -1,0 +1,73 @@
+query getPages($first: Int) {
+  pages(first: $first) {
+    heading
+    slug
+    body {
+      html
+    }
+  }
+}
+
+query getPageBySlug($slug: String!) {
+  page(where: { slug: $slug }) {
+    slug
+    heading
+    body {
+      html
+    }
+  }
+}
+
+query getPlaces($first: Int) {
+  places(first: $first) {
+    id
+    name
+    location {
+      latitude
+      longitude
+    }
+    slug
+  }
+}
+
+query getPlaceBySlug($slug: String) {
+  place(where: { slug: $slug }) {
+    description {
+      html
+      text
+    }
+    galery {
+      url
+    }
+    name
+    slug
+  }
+}
+
+mutation PostPage($slug: String!, $heading: String!, $body: RichTextAST) {
+  createPage(
+    data: {heading: $heading, slug: $slug, body:$body }
+  ) {
+    id
+    heading
+    stage
+  }
+  publishPage(where: {slug: $slug}) {
+    id
+    stage
+  }
+}
+
+
+# mutation PostPage {
+#   createPage(
+#     data: {heading: "kkk", slug: "lm", body: {children: [{type: "paragraph", children: [{text: "Hygraph boasts an impressive collection of "}]}]}}
+#   ) {
+#     id
+#     heading
+#     stage
+#   }
+#   publishPage(where: {slug: "lm"}) {
+#     id
+#   }
+# }
