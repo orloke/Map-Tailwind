@@ -15,7 +15,7 @@ export function PlaceTemplate({ place }: PlaceTemplateProps) {
         </LinkWrapper>
         <ButtonDarkMode />
       </div>
-      <div className="p-10 dark:bg-darkColor text-darkColor dark:text-white h-screen">
+      <div className="p-10 dark:bg-darkColor text-darkColor dark:text-white min-h-screen">
         <main className="max-w-80 m-auto">
           <h1 className="text-5rem mb-4 xsm:text-6xl xsm:mt-4">{place.name}</h1>
           <div
