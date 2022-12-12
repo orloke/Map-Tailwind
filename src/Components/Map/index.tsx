@@ -6,7 +6,16 @@ export default function Map() {
   const router = useRouter();
   const { place } = useAppData();
   return (
-    <MapContainer className="w-full h-full" center={[0, 0]} zoom={3}>
+    <MapContainer
+      className="w-full h-full"
+      center={[0, 0]}
+      zoom={3}
+      minZoom={3}
+      maxBounds={[
+        [-180, 180],
+        [180, -180],
+      ]}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
